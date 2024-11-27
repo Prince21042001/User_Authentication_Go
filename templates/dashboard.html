@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #2196F3;
+      color: white;
+    }
+    .content {
+      padding: 20px;
+    }
+    .reset-password {
+      text-decoration: none;
+      color: white;
+      background-color: #FF5722;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .reset-password:hover {
+      background-color: #E64A19;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+    <a href="/reset-password" class="reset-password">Reset Password</a>
+  </header>
+  <div class="content">
+    <h2>Technologies Used</h2>
+    <ul>
+      {{ range .technologies }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    <h2>Libraries Used</h2>
+    <ul>
+      {{ range .libraries }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    <h2>Database</h2>
+    <p>{{ .database }}</p>
+  </div>
+</body>
+</html>
